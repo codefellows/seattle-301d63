@@ -18,7 +18,8 @@ const votes = [];
 
 function Product(name) {
   this.name = name;
-  this.path = 'img/' + name + '.jpg';
+  // this.path = 'img/' + name + '.jpg';
+  this.path = `$img/${name}.jpg`;
   this.votes = 0;
   this.views = 0;
   allProducts.push(this);
@@ -50,7 +51,7 @@ function displayPics(){
 
 function handleClick(event) {
   if (event.target.id === 'image_container') {
-    return alert('Be sure to click directly on an image!!');
+    return alert(`Be sure to click directly on an image!!`);
   }
   totalClicks += 1;
   if(totalClicks > 24) {
@@ -62,7 +63,7 @@ function handleClick(event) {
   for(let i = 0; i < names.length; i++){
     if(event.target.id === allProducts[i].name) {
       allProducts[i].votes += 1;
-      console.log(event.target.id + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views');
+      console.log(`${event.target.id} has ${allProducts[i].votes} votes in ${allProducts[i].views} views`);
     }
   }
   localStorage.busmall = JSON.stringify(allProducts);
@@ -72,9 +73,9 @@ function handleClick(event) {
 
 function showList() {
   for(let i = 0; i < allProducts.length; i++) {
-    const liEl = document.createElement('li');
-    liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
-    list.appendChild(liEl);
+    const jimny = document.createElement('li');
+    jimny.textContent = `${allProducts[i].name} has ${allProducts[i].votes} votes in ${allProducts[i].views} views`;
+    list.appendChild(jimny);
   }
 }
 
@@ -127,7 +128,7 @@ if(localStorage.busmall){
   console.log('Local storage data exists');
   allProducts = JSON.parse(localStorage.busmall);
 } else {
-  console.log('There is no local storage data; initialize app by creating instances');
+  console.log(`There is no local storage data; initialize app by creating instances`);
   for(let i = 0; i < names.length; i++) {
     new Product(names[i]);
   }
