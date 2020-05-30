@@ -31,8 +31,11 @@ function displayPics(){
       viewed.push(rando);
     }
   }
+class-00-lab-c
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var to `let`.
   // rondo cannot be called outside of the block it is scoped in.
+  console.log(rando);
+
   console.log(viewed);
 
   for (let i = 0; i < 3; i++){
