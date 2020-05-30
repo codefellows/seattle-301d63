@@ -1,20 +1,20 @@
 'use strict';
 
-var names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+const names = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
 
-var leftImage = document.getElementById('left');
-var centerImage = document.getElementById('center');
-var rightImage = document.getElementById('right');
+const leftImage = document.getElementById('left');
+const centerImage = document.getElementById('center');
+const rightImage = document.getElementById('right');
 
-var allProducts = [];
-var container = document.getElementById('image_container');
-var viewed = [];
-var labels = [];
-var pics = [leftImage, centerImage, rightImage];
-var list = document.getElementById('productlist');
-var totalClicks = 0;
-var views = [];
-var votes = [];
+let allProducts = [];
+const container = document.getElementById('image_container');
+const viewed = [];
+const labels = [];
+const pics = [leftImage, centerImage, rightImage];
+const list = document.getElementById('productlist');
+let totalClicks = 0;
+const views = [];
+const votes = [];
 
 function Product(name) {
   this.name = name;
@@ -41,7 +41,7 @@ function displayPics(){
   console.log(viewed);
 
   for (var i = 0; i < 3; i++){
-    var temp = viewed.shift();
+    const temp = viewed.shift();
     pics[i].src = allProducts[temp].path;
     pics[i].id = allProducts[temp].name;
     allProducts[temp].views += 1;
@@ -72,7 +72,7 @@ function handleClick(event) {
 
 function showList() {
   for(var i = 0; i < allProducts.length; i++) {
-    var liEl = document.createElement('li');
+    const liEl = document.createElement('li');
     liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
     list.appendChild(liEl);
   }
@@ -88,7 +88,7 @@ function makeChartData(){
 
 function makeChart(){
   makeChartData();
-  var ctx = document.getElementById('chartypants').getContext('2d');
+  const ctx = document.getElementById('chartypants').getContext('2d');
   new Chart(ctx, { //eslint-disable-line
     type: 'bar',
     data: {
