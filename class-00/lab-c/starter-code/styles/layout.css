@@ -1,0 +1,19 @@
+div{
+    width: 150px;
+    width: 150px;
+    float: left;
+}
+
+body{
+    width: auto;
+    margin: auto;
+}
+
+@media(min-width: 600px) {
+    body {
+        width: 500px;
+        margin: auto;
+    }
+}
+/*  Much better than before */
+/* Test */
