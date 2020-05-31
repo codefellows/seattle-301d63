@@ -23,6 +23,7 @@ function Product(name) {
   this.views = 0;
   allProducts.push(this);
 }
+// made changes 
 
 function makeRandom() {
   return Math.floor(Math.random() * names.length);
