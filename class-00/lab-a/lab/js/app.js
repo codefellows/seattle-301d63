@@ -37,7 +37,7 @@ function displayPics() {
     }
   }
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `var` to `let`.
-  //Var declared inside of a function is scoped to that function. Let is scoped to the code block. 
+  //Var declared inside of a function is scoped to that function. Let only exist in that code block. 
   console.log(viewed);
 
   for (let i = 0; i < 3; i++) {
