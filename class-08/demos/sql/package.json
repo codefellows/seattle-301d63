@@ -1,6 +1,7 @@
 {
-  "name": "code-reivew",
+  "name": "day-1",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +13,8 @@
   "dependencies": {
     "cors": "2.8.5",
     "dotenv": "8.2.0",
-    "express": "4.17.1"
-  },
-  "devDependencies": {},
-  "description": ""
+    "express": "4.17.1",
+    "pg": "7.18.2",
+    "superagent": "^5.1.0"
+  }
 }

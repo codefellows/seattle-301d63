@@ -43,8 +43,8 @@ app.get('/weather', (request, response) => {
 function Location(searchQuery, obj){
   this.search_query = searchQuery;
   this.formatted_query = obj.display_name;
-  this.latitude = this.lat;
-  this.longitude = this.lon;
+  this.latitude = obj.lat;
+  this.longitude = obj.lon;
 }
 
 app.listen(PORT, () => {
