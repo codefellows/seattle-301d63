@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>My Grocery List</h1>
+    <p><a href="/">Home</a></p>
+    <ul>
+      <% myListAndQuantities.forEach(item => { %>
+        <li>I need <%= item.quantity %> <%= item.name %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
