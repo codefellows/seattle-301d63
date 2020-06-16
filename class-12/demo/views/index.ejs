@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./layout/head.ejs') %>
+</head>
+<body>
+  <section>
+  <% myToDoTasks.forEach(task => { %>
+    <form action="/addBook" method="post">
+      <div>
+        <span><%= task.title %></span>
+        <span><%= task.description %></span>
+        <span><%= task.completion %></span>
+        <a href="/tasks/<%= task.id %>">show details</a>
+      </div>
+      <input type=hidden name="title" value=<%=task.title%> />
+      <input type=hidden name="authors" value=<%=task.authors%> />
+      <input type=hidden name="description" value=<%=task.description%> />
+      <button>add to my favorites</button>
+    </form>
+    <% }) %>
+  </section>
+</body> 
+</html>
