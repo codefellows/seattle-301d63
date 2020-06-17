@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="styles/reset.css"  type="text/css">
+    <link rel="stylesheet" href="styles/base.css"  type="text/css">
+    <link rel="stylesheet" href="styles/layout.css"  type="text/css">
+    <link rel="stylesheet" href="styles/icons.css"  type="text/css">
+    <link rel="stylesheet" href="styles/modules.css"  type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <h4 id="title">Best Books!</h4>
+      <h4 id="title2">Search Results</h4>
+      <div id="container">
+        <% searchResults.forEach( book => { %>
+          <img src="<%= book.image %>" alt="<%= book.title %>"/>
+          <h5> <%= book.title %></h5>
+          <h6> <%= book.author %></h6>
+          <h7> <%= book.description %></h7>
+          <form action="/details" method="post">
+            <input type=hidden name="title" value="<%= book.title%>"/>
+            <input type=hidden name="authors" value="<%= book.authors%>"/>
+            <input type=hidden name="description" value="<%= book.description%>"/>
+            <input type=hidden name="image_url" value="<%= book.image_url%>"/>
+            <input type=hidden name="isbn" value="<%= book.isbn%>"/>
+            <button type='submit'>add to my favorites</button>
+          </form>
+          <% }) %>
+      </div>
+    </main>
+  </body>
+</html>

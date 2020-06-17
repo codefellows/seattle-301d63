@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="styles/reset.css"  type="text/css">
+    <link rel="stylesheet" href="styles/base.css"  type="text/css">
+    <link rel="stylesheet" href="styles/layout.css"  type="text/css">
+    <link rel="stylesheet" href="styles/icons.css"  type="text/css">
+    <link rel="stylesheet" href="styles/modules.css"  type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <h4 id="title">Best Books!</h4>
+      <div id="container">
+        <img src="<%= bookObject2.image %>" alt="<%= bookObject2.title %>"/>
+        <h5> <%= bookObject2.title %></h5>
+        <h6> <%= bookObject2.author %></h6>
+        <h7> <%= bookObject2.isbn %></h7>
+        <a href="/">Return to home</a>
+      </div>
+    </main>
+  </body>
+</html>

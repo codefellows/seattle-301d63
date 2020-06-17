@@ -7,7 +7,14 @@
   <section>
     <h2><%= oneTask.title %><h2>
     <p><%= oneTask.description %></p>
-    <%= oneTask.completion %>
+    <p><%= oneTask.completion %></p>
   </section>
+
+  <form action="/update/<%= oneTask.id %>?_method=PUT" method="post">
+    <input type="text" name="title" value="<%- oneTask.title %>" placeholder="Task Name"/>
+    <input type="text" name="description" value="<%- oneTask.description %>" placeholder="Task description"/>
+    <input type="text" name="completion" value="<%- oneTask.completion %>" placeholder="completion"/>
+    <button>submit</button>
+  </form>
 </body>
 </html>

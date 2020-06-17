@@ -5,6 +5,7 @@ const app = express();
 require('dotenv').config();
 const pg = require('pg');
 require('ejs');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,10 +15,34 @@ app.set('view engine', 'ejs');
 // translates the body/ parses it
 app.use(express.urlencoded({extended:true}));
 
+// lets us translate our post to a put
+app.use(methodOverride('_method'));
+
 app.get('/', getTasks);
 app.get('/add', showAddForm);
 app.post('/add', addTask);
 app.get('/tasks/:task_id', getOneTask);
+app.put('/update/:task_id', updateTask);
+
+function updateTask(request, response){
+  // collect the information that needs to be updated
+  console.log('this is our params', request.params); //{ task_id: '3' }
+  let taskId = request.params.task_id;
+
+  console.log('form information to be updated', request.body);
+  // { title: 'eat', description: 'chewing', completion: 'eaten' }
+  let { title, description, completion } = request.body;
+
+  let sql = 'UPDATE tasks SET title=$1, description=$2, completion=$3 WHERE id=$4;';
+  let safeValues = [title, description, completion, taskId];
+  // update the database with the new information
+
+  client.query(sql, safeValues)
+    .then(sqlResults => {
+      // redirect to teh detail page with the new values
+      response.redirect(`/tasks/${taskId}`);
+    })
+}
 
 function getOneTask(request, response){
   //go to the database, get a specific task using an id and show details of that specific tasks

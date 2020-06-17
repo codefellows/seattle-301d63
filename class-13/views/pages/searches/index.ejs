@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="styles/reset.css"  type="text/css">
+    <link rel="stylesheet" href="styles/base.css"  type="text/css">
+    <link rel="stylesheet" href="styles/layout.css"  type="text/css">
+    <link rel="stylesheet" href="styles/icons.css"  type="text/css">
+    <link rel="stylesheet" href="styles/modules.css"  type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+ </head>
+  <body>
+    <section>
+      <p>You have <%= bookObject.length %> books in your collection</p>
+      <form action ="/addBook" method="post">
+      <% bookObject.forEach(book => { %>
+        <div>
+           <img src="<%= book.image %>" alt="picture of book"/>
+           <span><%= book.title%></span>
+           <span><%= book.author %></span>
+           <a href="/books/<%= book.id %>">show details</a>
+        </div>
+        <% }) %>
+      </form>
+    </section>
+  </body>
+
+
+
+
+
+
+</html>
+
+    </main>
+  </body>
+</html>

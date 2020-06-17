@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="styles/reset.css"  type="text/css">
+    <link rel="stylesheet" href="styles/base.css"  type="text/css">
+    <link rel="stylesheet" href="styles/layout.css"  type="text/css">
+    <link rel="stylesheet" href="styles/icons.css"  type="text/css">
+    <link rel="stylesheet" href="styles/modules.css"  type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <h4 id="title">Best Books!</h4>
+      <h4 id="title2">Search by Title or Author</h4>
+      <div id="newContainer">
+      <form action="/searches" method="post">
+        <input type="text" name="search" placeholder="Enter a title or author" required>
+        <fieldset id="titleAuthor">
+          <label>
+            <span>Title</span>
+            <input id = "radio" type="radio" name="search" value="title" required>
+          </label>
+        </fieldset>
+        <fieldset id="titleAuthor">
+          <label for="author">
+            <span>Author</span>
+            <input id = "radio" type="radio" name="search" value="author" required>
+          </label>
+        </fieldset>
+        <button id="submit-button" type="submit">Search the Google Books API</button>
+      </form>
+    </div>
+    </main>
+  </body>
+</html>
